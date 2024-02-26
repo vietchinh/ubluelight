@@ -18,27 +18,21 @@ jobs:
         run: |
           git config user.name "Vietchinh GitHub Actions Bot"
           git config user.email "1348151+vietchinh@users.noreply.github.com"
-      - name: Add ublue-os startingpoint remote
-        run: git remote add template https://github.com/ublue-os/startingpoint
+      - name: Add blue-build template remote
+        run: git remote add main https://github.com/blue-build/template
       - name: Fetch all
         run: git fetch --all
       - name: Checkout template
-        run: git checkout -b template --track origin/template
+        run: git checkout -b main --track origin/main
       - name: Check if there is an update available
         id: check
         run: |
-          DIFF_COUNT=`git diff --numstat --minimal template/template..template | cut -c1-1`
+          DIFF_COUNT=`git diff --numstat --minimal main/main..main | cut -c1-1`
           if [ -z "$DIFF_COUNT" ]; then
               echo "update=false" >> $GITHUB_ENV
           else
               echo "update=true" >> $GITHUB_ENV
           fi
-      - name: Git merge changes from template to ubluelight/template
+      - name: Git merge changes from main to ubluelight/main
         if: ${{ env.update == 'true' }}
-        run: git merge template/template --allow-unrelated-histories && git push origin template
-      - name: Checkout live
-        if: ${{ env.update == 'true' }}
-        run: git checkout live
-      - name: Git rebase template in live
-        if: ${{ env.update == 'true' }}
-        run: git rebase --onto origin/template --root live --reapply-cherry-picks && git push origin live -f
+        run: git merge main/main --allow-unrelated-histories && git push origin main
