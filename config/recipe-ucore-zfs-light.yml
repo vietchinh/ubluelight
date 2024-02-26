@@ -39,8 +39,6 @@ modules:
   - type: script
     scripts:
       - ucore.sh
-      # this sets up the proper policy & signing files for signed images to work
-      - signing.sh
 
   - type: systemd
     system:
@@ -51,3 +49,5 @@ modules:
       masked:
         - lxd.service
         - nfs.service
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
