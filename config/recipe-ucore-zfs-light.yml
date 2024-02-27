@@ -41,6 +41,12 @@ modules:
     - perl-podlators
     - perl-Getopt-Long
     - perl-Pod-Simple
+    - perl-Encode
+    - perl-libs
+    - perl-URI
+    - perl-interpreter
+    - perl-Errno
+    - perl-mro
 
   - type: script
     scripts:
