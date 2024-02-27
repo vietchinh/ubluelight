@@ -35,7 +35,6 @@ modules:
     - tmux
     - open-vm-tools
     - wireguard-tools
-    - groff-base
 
   - type: script
     scripts:
