@@ -37,6 +37,7 @@ modules:
     - wireguard-tools
     - groff-base
     - perl-Pod-Perldoc
+    - perl-Pod-Usage
 
   - type: script
     scripts:
