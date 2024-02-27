@@ -38,6 +38,9 @@ modules:
     - groff-base
     - perl-Pod-Perldoc
     - perl-Pod-Usage
+    - perl-podlators
+    - perl-Getopt-Long
+    - perl-Pod-Simple
 
   - type: script
     scripts:
