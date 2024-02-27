@@ -36,6 +36,7 @@ modules:
     - open-vm-tools
     - wireguard-tools
     - groff-base
+    - perl-Pod-Perldoc
 
   - type: script
     scripts:
