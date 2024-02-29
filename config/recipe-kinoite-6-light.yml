@@ -96,17 +96,18 @@ modules:
       masked:
         - libvirt.service
 
-  - type: script
-    scripts:
-      - kinoite.sh
-      - kinoite-6.sh
-
   - type: containerfile
     snippets:
       - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /
       - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /
       - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /
       - RUN rpm -ivh /ublue-os-signing.noarch.rpm && rpm -ivh /ublue-os-udev-rules.noarch.rpm && rpm -ivh /ublue-os-update-services.noarch.rpm
+
+  - type: script
+    scripts:
+      - kinoite.sh
+      - kinoite-6.sh
+      - post-install.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
