@@ -22,6 +22,12 @@ modules:
     - duperemove
     - xdg-dbus-proxy
     - xdg-user-dirs
+    - smartmontools
+    - powertop
+    - lm_sensors
+    - hdparm
+    - hddtemp
+    - hddfancontrol
     remove:
     - moby-engine
     - toolbox
