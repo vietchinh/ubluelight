@@ -24,6 +24,7 @@ jobs:
           # !! Add your recipes here
           - recipe-ucore-zfs-light.yml
           - recipe-kinoite-light.yml
+          - recipe-kinoite-6-light.yml
           - recipe-kinoite-light-bore-eevdf.yml
 
     steps:
