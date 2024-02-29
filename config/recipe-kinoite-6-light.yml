@@ -107,7 +107,6 @@ modules:
     scripts:
       - kinoite.sh
       - kinoite-6.sh
-      - post-install.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
