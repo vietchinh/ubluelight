@@ -58,6 +58,7 @@ modules:
       - perl-DBD-MariaDB
       - qt6-qtbase-mysql
       - akonadi-server-mysql
+      - akonadi-server
 
   - type: default-flatpaks
     notify: true   # Send notification after install/uninstall is finished (true/false)
