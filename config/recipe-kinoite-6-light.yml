@@ -4,7 +4,7 @@ name: ublue-kinoite-6-light
 description: Ublue kinoite minimal with plasma 6
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: quay.io/fedora-ostree-desktops/kinoite
+base-image: ghcr.io/ublue-os/kinoite-main
 image-version: 40 # latest is also supported if you want new updates ASAP
 
 # list of modules, executed in order
@@ -19,29 +19,13 @@ modules:
 
   - type: rpm-ostree
     install:
-      - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm
-      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm
-
-  - type: rpm-ostree
-    install:
       - podman
       - htop
-      - distrobox
-      - google-noto-sans-balinese-fonts
-      - google-noto-sans-cjk-fonts
-      - google-noto-sans-javanese-fonts
-      - google-noto-sans-sundanese-fonts
-      - smartmontools
-      - openssl
-      - heif-pixbuf-loader
-      - libheif-freeworld
-      - libheif-tools
-      - libratbag-ratbagd
-      - libva-utils
-      - kate
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
+      - akonadi-server-mysql
+      - akonadi-server
       - kmousetool
       - krfb-libs
       - krfb
@@ -58,8 +42,19 @@ modules:
       - mariadb-connector-c-config
       - perl-DBD-MariaDB
       - qt6-qtbase-mysql
-      - akonadi-server-mysql
-      - akonadi-server
+      - apr
+      - apr-util
+      - apr-util-openssl
+      - apr-util-bdb
+      - grub2-tools-extra
+      - intel-media-driver
+      - libva-intel-driver
+      - nvtop
+      - tmux
+      - wireguard-tools
+      - fzf
+      - icoutils
+      - kcron
 
   - type: default-flatpaks
     notify: true   # Send notification after install/uninstall is finished (true/false)
@@ -98,17 +93,9 @@ modules:
       masked:
         - libvirt.service
 
-  - type: containerfile
-    snippets:
-      - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /
-      - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /
-      - COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /
-      - RUN rpm -ivh /ublue-os-signing.noarch.rpm && rpm -ivh /ublue-os-udev-rules.noarch.rpm && rpm -ivh /ublue-os-update-services.noarch.rpm
-
   - type: script
     scripts:
       - kinoite.sh
-      - kinoite-6.sh
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
