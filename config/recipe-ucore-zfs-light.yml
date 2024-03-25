@@ -31,7 +31,6 @@ modules:
     remove:
     - moby-engine
     - toolbox
-    - mbuffer
     - perl-Capture-Tiny
     - perl-Config-IniFiles
     - podman-compose
