@@ -32,7 +32,6 @@ modules:
     remove:
     - moby-engine
     - toolbox
-    - perl-Config-IniFiles
     - podman-compose
     - pv
     - qemu-guest-agent
