@@ -18,6 +18,7 @@ modules:
   - type: rpm-ostree
     install:
     - htop
+    - cockpit-pcp
     - cockpit-storaged
     - duperemove
     - xdg-dbus-proxy
