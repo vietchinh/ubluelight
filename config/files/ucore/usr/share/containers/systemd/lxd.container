@@ -6,12 +6,9 @@ Image=ghcr.io/vietchinh/lxd-in-podman:latest
 AutoUpdate=registry
 
 Volume=/var/lib/lxd:/var/lib/lxd:z
-
-PodmanArgs=--privileged
-
-Tmpfs=/run
-
 Network=host
+PodmanArgs=--privileged
+AddDevice=/dev/loop-control:/dev/loop-control:rwm
 
 [Service]
 Restart=on-failure
