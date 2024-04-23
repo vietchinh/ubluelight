@@ -5,7 +5,7 @@ description: Ublue kinoite minimal
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: 39 # latest is also supported if you want new updates ASAP
+image-version: 40 # latest is also supported if you want new updates ASAP
 
 # list of modules, executed in order
 # you can include multiple instances of the same module
@@ -23,8 +23,8 @@ modules:
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-      - kf5-akonadi-server-mysql
-      - kf5-akonadi-server
+      - akonadi-server-mysql
+      - akonadi-server
       - kmousetool
       - krfb-libs
       - krfb
@@ -40,11 +40,11 @@ modules:
       - mariadb-connector-c
       - mariadb-connector-c-config
       - perl-DBD-MariaDB
-      - qt5-qtbase-mysql
+      - qt6-qtbase-mysql
       - apr
       - apr-util
       - apr-util-openssl
-      - apr-util-bdb
+      - apr-util-lmdb
       - grub2-tools-extra
       - intel-media-driver
       - libva-intel-driver
