@@ -29,12 +29,18 @@ modules:
     - hdparm
     - hddtemp
     - hddfancontrol
+    - pcp-zeroconf
+    - pciutils
+    - usbutils
+    - cockpit-machines
+    - libvirt-client
+    - libvirt-daemon-kvm
+    - virt-install
     remove:
     - moby-engine
     - toolbox
     - podman-compose
     - pv
-    - qemu-guest-agent
     - tailscale
     - tmux
     - open-vm-tools
