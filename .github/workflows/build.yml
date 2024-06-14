@@ -25,6 +25,7 @@ jobs:
           - recipe-ucore-zfs-light.yml
           - recipe-kinoite-light.yml
           - recipe-kinoite-light-bore-eevdf.yml
+          - recipe-kinoite-light-bore-eevdf-clang.yml
 
     steps:
        # the build is fully handled by the reusable github action
