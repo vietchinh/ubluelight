@@ -6,9 +6,12 @@ Image=ghcr.io/vietchinh/incus-in-podman:latest
 AutoUpdate=registry
 
 Volume=/var/lib/incus:/var/lib/incus:z
+Volume=/dev:/dev
+Volume=/lib/modules:/lib/modules:ro
 Network=host
-PodmanArgs=--privileged
+PodmanArgs=--privileged --cgroupns=host --cgroups=no-conmon
 AddDevice=/dev/loop-control:/dev/loop-control:rwm
+Unmask=/sys/fs/cgroup
 
 [Service]
 Restart=on-failure
