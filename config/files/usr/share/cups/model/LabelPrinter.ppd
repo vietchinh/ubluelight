@@ -7,13 +7,13 @@
 *FileVersion: "1.2.1"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
-*PCFileName: "T200Printer.ppd"
-*Manufacturer: ""
-*cupsModelNumber: 22
-*Product: "(T200Printer)"
-*ModelName: "T200"
-*ShortNickName: "T200Printer"
-*NickName: "T200Printer"
+*PCFileName: "Label Printer.ppd"
+*Manufacturer: "Phomemo"
+*cupsModelNumber: 20
+*Product: "(Label Printer)"
+*ModelName: "LabelPrinter"
+*ShortNickName: "Label Printer"
+*NickName: "Label Printer"
 *PSVersion: "(3010.000) 550"
 *PSVersion: "(3010.000) 651"
 *PSVersion: "(3010.000) 652"
@@ -78,6 +78,8 @@
 *PageSize w288h432/4.00x6.00": "<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
 *PageSize w288h468/4.00x6.50": "<</PageSize[288 468]/ImagingBBox null>>setpagedevice"
 *PageSize w288h576/4.00x8.00": "<</PageSize[288 576]/ImagingBBox null>>setpagedevice"
+*PageSize w288h792/4.00x11.00": "<</PageSize[288 792]/ImagingBBox null>>setpagedevice"
+*PageSize w288h936/4.00x13.00": "<</PageSize[288 936]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageSize
 
 *OpenUI *PageRegion/Media Size: PickOne
@@ -124,6 +126,8 @@
 *PageRegion w288h432/4.00x6.00": "<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
 *PageRegion w288h468/4.00x6.50": "<</PageSize[288 468]/ImagingBBox null>>setpagedevice"
 *PageRegion w288h576/4.00x8.00": "<</PageSize[288 576]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h792/4.00x11.00": "<</PageSize[288 792]/ImagingBBox null>>setpagedevice"
+*PageRegion w288h936/4.00x13.00": "<</PageSize[288 936]/ImagingBBox null>>setpagedevice"
 *CloseUI: *PageRegion
 
 *DefaultImageableArea: w288h432
@@ -168,6 +172,8 @@
 *ImageableArea w288h432/4.00x6.00": "0 0 288 432"
 *ImageableArea w288h468/4.00x6.50": "0 0 288 468"
 *ImageableArea w288h576/4.00x8.00": "0 0 288 576"
+*ImageableArea w288h792/4.00x11.00": "0 0 288 792"
+*ImageableArea w288h936/4.00x13.00": "0 0 288 936"
 
 *DefaultPaperDimension: w288h432
 *PaperDimension w90h18/1.25x0.25": "90 18"
@@ -211,13 +217,15 @@
 *PaperDimension w288h432/4.00x6.00": "288 432"
 *PaperDimension w288h468/4.00x6.50": "288 468"
 *PaperDimension w288h576/4.00x8.00": "288 576"
+*PaperDimension w288h792/4.00x11.00": "288 792"
+*PaperDimension w288h936/4.00x13.00": "288 936"
 
 *MaxMediaWidth: "341"
-*MaxMediaHeight: "6480"
+*MaxMediaHeight: "1134"
 *HWMargins: 0 0 0 0
 *CustomPageSize True: "pop pop pop <</PageSize[5 -2 roll]/ImagingBBox null>>setpagedevice"
 *ParamCustomPageSize Width: 1 points 10 341
-*ParamCustomPageSize Height: 2 points 10 6480
+*ParamCustomPageSize Height: 2 points 10 1134
 *ParamCustomPageSize WidthOffset: 3 points 0 0
 *ParamCustomPageSize HeightOffset: 4 points 0 0
 *ParamCustomPageSize Orientation: 5 int 0 0
@@ -232,13 +240,65 @@
 
 *OpenGroup: PrinterSettings/Printer Settings
 
-*OpenUI *PrintMethod/Printing Method: PickOne
-*OrderDependency: 20 AnySetup *PrintMethod
-*DefaultPrintMethod: none
-*PrintMethod none/Use printer setting: ""
-*PrintMethod thermal/Thermal: ""
-*PrintMethod thermalTransfer/Thermal Transfer: ""
-*CloseUI: *PrintMethod
+*OpenUI *zeMediaTracking/Media Tracking: PickOne
+*OrderDependency: 20 AnySetup *zeMediaTracking
+*DefaultzeMediaTracking: Gap
+*zeMediaTracking Continuous/Continuous: ""
+*zeMediaTracking Gap/Gap: ""
+*zeMediaTracking BLine/Black Line: ""
+*CloseUI: *zeMediaTracking
+
+*OpenUI *GapHeight/Gap or Mark Height: PickOne
+*OrderDependency: 20 AnySetup *GapHeight
+*DefaultGapHeight: 3
+*GapHeight 0/0mm: ""
+*GapHeight 1/1mm: ""
+*GapHeight 2/2mm: ""
+*GapHeight 3/3mm: ""
+*GapHeight 4/4mm: ""
+*GapHeight 5/5mm: ""
+*GapHeight 6/6mm: ""
+*GapHeight 7/7mm: ""
+*GapHeight 8/8mm: ""
+*GapHeight 9/9mm: ""
+*GapHeight 10/10mm: ""
+*GapHeight 11/11mm: ""
+*GapHeight 12/12mm: ""
+*GapHeight 13/13mm: ""
+*GapHeight 14/14mm: ""
+*GapHeight 15/15mm: ""
+*GapHeight 16/16mm: ""
+*GapHeight 17/17mm: ""
+*GapHeight 18/18mm: ""
+*GapHeight 19/19mm: ""
+*GapHeight 20/20mm: ""
+*CloseUI: *GapHeight
+
+*OpenUI *GapOffset/Gap or Mark Offset: PickOne
+*OrderDependency: 20 AnySetup *GapOffset
+*DefaultGapOffset: 0
+*GapOffset 0/0mm: ""
+*GapOffset 1/1mm: ""
+*GapOffset 2/2mm: ""
+*GapOffset 3/3mm: ""
+*GapOffset 4/4mm: ""
+*GapOffset 5/5mm: ""
+*GapOffset 6/6mm: ""
+*GapOffset 7/7mm: ""
+*GapOffset 8/8mm: ""
+*GapOffset 9/9mm: ""
+*GapOffset 10/10mm: ""
+*GapOffset 11/11mm: ""
+*GapOffset 12/12mm: ""
+*GapOffset 13/13mm: ""
+*GapOffset 14/14mm: ""
+*GapOffset 15/15mm: ""
+*GapOffset 16/16mm: ""
+*GapOffset 17/17mm: ""
+*GapOffset 18/18mm: ""
+*GapOffset 19/19mm: ""
+*GapOffset 20/20mm: ""
+*CloseUI: *GapOffset
 
 *OpenUI *Darkness/Darkness: PickOne
 *OrderDependency: 20 AnySetup *Darkness
@@ -281,122 +341,10 @@
 *ColorOption GrayScale/GrayScale: ""
 *CloseUI: *ColorOption
 
-*OpenUI *AfterPrint/After Print: PickOne
-*OrderDependency: 20 AnySetup *AfterPrint
-*DefaultAfterPrint: none
-*AfterPrint none/None: ""
-*AfterPrint cut/Cut: ""
-*CloseUI: *AfterPrint
-
-*OpenUI *FeedOffset/Feed Offset: PickOne
-*OrderDependency: 20 AnySetup *FeedOffset
-*DefaultFeedOffset: 0
-*FeedOffset -20/-20mm: "%%"
-*FeedOffset -19/-19mm: "%%"
-*FeedOffset -18/-18mm: "%%"
-*FeedOffset -17/-17mm: "%%"
-*FeedOffset -16/-16mm: "%%"
-*FeedOffset -15/-15mm: "%%"
-*FeedOffset -14/-14mm: "%%"
-*FeedOffset -13/-13mm: "%%"
-*FeedOffset -12/-12mm: "%%"
-*FeedOffset -11/-11mm: "%%"
-*FeedOffset -10/-10mm: "%%"
-*FeedOffset -9/-9mm: "%%"
-*FeedOffset -8/-8mm: "%%"
-*FeedOffset -7/-7mm: "%%"
-*FeedOffset -6/-6mm: "%%"
-*FeedOffset -5/-5mm: "%%"
-*FeedOffset -4/-4mm: "%%"
-*FeedOffset -3/-3mm: "%%"
-*FeedOffset -2/-2mm: "%%"
-*FeedOffset -1/-1mm: "%%"
-*FeedOffset 0/0mm: "%%"
-*FeedOffset 1/1mm: "%%"
-*FeedOffset 2/2mm: "%%"
-*FeedOffset 3/3mm: "%%"
-*FeedOffset 4/4mm: "%%"
-*FeedOffset 5/5mm: "%%"
-*FeedOffset 6/6mm: "%%"
-*FeedOffset 7/7mm: "%%"
-*FeedOffset 8/8mm: "%%"
-*FeedOffset 9/9mm: "%%"
-*FeedOffset 10/10mm: "%%"
-*FeedOffset 11/11mm: "%%"
-*FeedOffset 12/12mm: "%%"
-*FeedOffset 13/13mm: "%%"
-*FeedOffset 14/14mm: "%%"
-*FeedOffset 15/15mm: "%%"
-*FeedOffset 16/16mm: "%%"
-*FeedOffset 17/17mm: "%%"
-*FeedOffset 18/18mm: "%%"
-*FeedOffset 19/19mm: "%%"
-*FeedOffset 20/20mm: "%%"
-*CloseUI: *FeedOffset
 
 *CloseGroup: PrinterSettings
 
 *OpenGroup: PageSet/Page Options
-
-*OpenUI *zeMediaTracking/Media Tracking: PickOne
-*OrderDependency: 130 AnySetup *zeMediaTracking
-*DefaultzeMediaTracking: Gap
-*zeMediaTracking Continuous/Continuous: ""
-*zeMediaTracking Gap/Gap: ""
-*zeMediaTracking BLine/Black Line: ""
-*CloseUI: *zeMediaTracking
-
-*OpenUI *GapHeight/Gap or Mark Height: PickOne
-*OrderDependency: 130 AnySetup *GapHeight
-*DefaultGapHeight: 3
-*GapHeight 0/0mm: ""
-*GapHeight 1/1mm: ""
-*GapHeight 2/2mm: ""
-*GapHeight 3/3mm: ""
-*GapHeight 4/4mm: ""
-*GapHeight 5/5mm: ""
-*GapHeight 6/6mm: ""
-*GapHeight 7/7mm: ""
-*GapHeight 8/8mm: ""
-*GapHeight 9/9mm: ""
-*GapHeight 10/10mm: ""
-*GapHeight 11/11mm: ""
-*GapHeight 12/12mm: ""
-*GapHeight 13/13mm: ""
-*GapHeight 14/14mm: ""
-*GapHeight 15/15mm: ""
-*GapHeight 16/16mm: ""
-*GapHeight 17/17mm: ""
-*GapHeight 18/18mm: ""
-*GapHeight 19/19mm: ""
-*GapHeight 20/20mm: ""
-*CloseUI: *GapHeight
-
-*OpenUI *GapOffset/Gap or Mark Offset: PickOne
-*OrderDependency: 130 AnySetup *GapOffset
-*DefaultGapOffset: 0
-*GapOffset 0/0mm: ""
-*GapOffset 1/1mm: ""
-*GapOffset 2/2mm: ""
-*GapOffset 3/3mm: ""
-*GapOffset 4/4mm: ""
-*GapOffset 5/5mm: ""
-*GapOffset 6/6mm: ""
-*GapOffset 7/7mm: ""
-*GapOffset 8/8mm: ""
-*GapOffset 9/9mm: ""
-*GapOffset 10/10mm: ""
-*GapOffset 11/11mm: ""
-*GapOffset 12/12mm: ""
-*GapOffset 13/13mm: ""
-*GapOffset 14/14mm: ""
-*GapOffset 15/15mm: ""
-*GapOffset 16/16mm: ""
-*GapOffset 17/17mm: ""
-*GapOffset 18/18mm: ""
-*GapOffset 19/19mm: ""
-*GapOffset 20/20mm: ""
-*CloseUI: *GapOffset
 
 *OpenUI *AdjustHoriaontal/Horizontal Offset:PickOne
 *OrderDependency: 130 AnySetup *AdjustHoriaontal
@@ -502,6 +450,43 @@
 *CloseUI: *Rotate
 
 
+*OpenUI *FeedOffset/Feed Offset: PickOne
+*OrderDependency: 160 AnySetup *FeedOffset
+*DefaultFeedOffset: 0
+*FeedOffset -12/-12mm: "%%"
+*FeedOffset -11/-11mm: "%%"
+*FeedOffset -10/-10mm: "%%"
+*FeedOffset -9/-9mm: "%%"
+*FeedOffset -8/-8mm: "%%"
+*FeedOffset -7/-7mm: "%%"
+*FeedOffset -6/-6mm: "%%"
+*FeedOffset -5/-5mm: "%%"
+*FeedOffset -4/-4mm: "%%"
+*FeedOffset -3/-3mm: "%%"
+*FeedOffset -2/-2mm: "%%"
+*FeedOffset -1/-1mm: "%%"
+*FeedOffset 0/0mm: "%%"
+*FeedOffset 1/1mm: "%%"
+*FeedOffset 2/2mm: "%%"
+*FeedOffset 3/3mm: "%%"
+*FeedOffset 4/4mm: "%%"
+*FeedOffset 5/5mm: "%%"
+*FeedOffset 6/6mm: "%%"
+*FeedOffset 7/7mm: "%%"
+*FeedOffset 8/8mm: "%%"
+*FeedOffset 9/9mm: "%%"
+*FeedOffset 10/10mm: "%%"
+*FeedOffset 11/11mm: "%%"
+*FeedOffset 12/12mm: "%%"
+*CloseUI: *FeedOffset
+
+*OpenUI *RoundLabel/RoundLabel: PickOne
+*OrderDependency: 160 AnySetup *RoundLabel
+*DefaultRoundLabel: No
+*RoundLabel No/No: "%%"
+*RoundLabel Yes/Yes: "%%"
+*CloseUI: *RoundLabel
+
 *CloseGroup: PageSet
 
 *zh_CN.Translation General/常规: ""
@@ -526,13 +511,9 @@
 *zh_CN.Translation AdjustVertical/垂直偏移: ""
 *zh_CN.Translation Rotate/旋转: ""
 *zh_CN.Translation FeedOffset/打印后走纸: ""
-*zh_CN.Translation PrintMethod/打印方式: ""
-*zh_CN.PrintMethod none/使用打印机设置: ""
-*zh_CN.PrintMethod thermal/热敏: ""
-*zh_CN.PrintMethod thermalTransfer/热转印: ""
-*zh_CN.Translation AfterPrint/打印后操作: ""
-*zh_CN.AfterPrint none/无: ""
-*zh_CN.AfterPrint cut/裁切: ""
+*zh_CN.Translation RoundLabel/圆形标签: ""
+*zh_CN.RoundLabel Yes/是: ""
+*zh_CN.RoundLabel No/否: ""
 
 *zh_TW.Translation General/常規: ""
 *zh_TW.Translation PageSet/紙張設置: ""
@@ -556,13 +537,9 @@
 *zh_TW.Translation AdjustVertical/垂直偏移: ""
 *zh_TW.Translation Rotate/旋轉: ""
 *zh_TW.Translation FeedOffset/打印后走紙: ""
-*zh_TW.Translation PrintMethod/打印方式: ""
-*zh_TW.PrintMethod none/使用打印機設置: ""
-*zh_TW.PrintMethod thermal/熱敏: ""
-*zh_TW.PrintMethod thermalTransfer/熱轉印: ""
-*zh_TW.Translation AfterPrint/打印後操作: ""
-*zh_TW.AfterPrint none/無: ""
-*zh_TW.AfterPrint cut/裁切: ""
+*zh_TW.Translation RoundLabel/圓形標籤: ""
+*zh_TW.RoundLabel Yes/是: ""
+*zh_TW.RoundLabel No/否: ""
 
 *de.Translation General/Regulär: ""
 *de.Translation PageSet/Seite einrichten: ""
@@ -586,13 +563,9 @@
 *de.Translation AdjustVertical/Vertikaler Versatz: ""
 *de.Translation Rotate/Drehen: ""
 *de.Translation FeedOffset/Nach dem Druck: ""
-*de.Translation PrintMethod/Druckverfahren: ""
-*de.PrintMethod none/Druckereinstellungen verwenden: ""
-*de.PrintMethod thermal/Thermal: ""
-*de.PrintMethod thermalTransfer/Thermische übertragung: ""
-*de.Translation AfterPrint/Nach Druck: ""
-*de.AfterPrint none/Keiner: ""
-*de.AfterPrint cut/Schneiden: ""
+*de.Translation RoundLabel/Rundes Etikett: ""
+*de.RoundLabel Yes/ja: ""
+*de.RoundLabel No/nein: ""
 
 *pl.Translation General/Rutyna: ""
 *pl.Translation PageSet/Konfiguracja strony: ""
@@ -616,13 +589,9 @@
 *pl.Translation AdjustVertical/Przesunięcie pionowe: ""
 *pl.Translation Rotate/Obróc: ""
 *pl.Translation FeedOffset/Po wydrukowaniu: ""
-*pl.Translation PrintMethod/Metoda drukowania: ""
-*pl.PrintMethod none/Użyj ustawień drukarki: ""
-*pl.PrintMethod thermal/Termiczny: ""
-*pl.PrintMethod thermalTransfer/Termotransfer: ""
-*pl.Translation AfterPrint/Po wydrukowaniu: ""
-*pl.AfterPrint none/Żaden: ""
-*pl.AfterPrint cut/Skaleczenie: ""
+*pl.Translation RoundLabel/Okrągła etykieta: ""
+*pl.RoundLabel Yes/tak: ""
+*pl.RoundLabel No/nie: ""
 
 *fr.Translation General/routine: ""
 *fr.Translation PageSet/Format d'impression: ""
@@ -646,13 +615,9 @@
 *fr.Translation AdjustVertical/décalage vertical: ""
 *fr.Translation Rotate/Orientation: ""
 *fr.Translation FeedOffset/Après-impression: ""
-*fr.Translation PrintMethod/Méthode d'impression: ""
-*fr.PrintMethod none/Utiliser les paramètres de l'imprimante: ""
-*fr.PrintMethod thermal/Thermique: ""
-*fr.PrintMethod thermalTransfer/Transfert thermique: ""
-*fr.Translation AfterPrint/Après impression: ""
-*fr.AfterPrint none/Rien: ""
-*fr.AfterPrint cut/Couper: ""
+*fr.Translation RoundLabel/Étiquette ronde: ""
+*fr.RoundLabel Yes/oui: ""
+*fr.RoundLabel No/non: ""
 
 *es.Translation General/Regular: ""
 *es.Translation PageSet/Configuración de página: ""
@@ -676,13 +641,9 @@
 *es.Translation AdjustVertical/Vertical offset: ""
 *es.Translation Rotate/Configuración de rotación: ""
 *es.Translation FeedOffset/Expulsión de la página después de la impresión: ""
-*es.Translation PrintMethod/Método de impresión: ""
-*es.PrintMethod none/Usar la configuración de la impresora: ""
-*es.PrintMethod thermal/Térmico: ""
-*es.PrintMethod thermalTransfer/Transferencia térmica: ""
-*es.Translation AfterPrint/Después de imprimir: ""
-*es.AfterPrint none/Ninguna: ""
-*es.AfterPrint cut/Cortar: ""
+*es.Translation RoundLabel/Etiqueta redonda: ""
+*es.RoundLabel Yes/sí: ""
+*es.RoundLabel No/no: ""
 
 *it.Translation General/Routine: ""
 *it.Translation PageSet/Impostazione Pagina: ""
@@ -706,13 +667,9 @@
 *it.Translation AdjustVertical/Offset verticale: ""
 *it.Translation Rotate/Impostazionei Rotazione: ""
 *it.Translation FeedOffset/Espulsione carta dopo stampa: ""
-*it.Translation PrintMethod/Metodo di stampa: ""
-*it.PrintMethod none/Usa le impostazioni della stampante: ""
-*it.PrintMethod thermal/Termico: ""
-*it.PrintMethod thermalTransfer/Trasferimento termico: ""
-*it.Translation AfterPrint/Dopo la stampa: ""
-*it.AfterPrint none/Nessuno: ""
-*it.AfterPrint cut/Taglio: ""
+*it.Translation RoundLabel/Etichetta rotonda: ""
+*it.RoundLabel Yes/sì: ""
+*it.RoundLabel No/no: ""
 
 
 *DefaultFont: Courier

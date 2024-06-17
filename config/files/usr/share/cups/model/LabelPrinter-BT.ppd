@@ -7,13 +7,13 @@
 *FileVersion: "1.2.1"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
-*PCFileName: "PM-241-BT.ppd"
-*Manufacturer: ""
+*PCFileName: "Label Printer-BT.ppd"
+*Manufacturer: "Phomemo"
 *cupsModelNumber: 20
-*Product: "(PM-241-BT)"
-*ModelName: "PM-241-BT"
-*ShortNickName: "PM-241-BT"
-*NickName: "PM-241-BT"
+*Product: "(Label Printer-BT)"
+*ModelName: "LabelPrinter-BT"
+*ShortNickName: "Label Printer-BT"
+*NickName: "Label Printer-BT"
 *PSVersion: "(3010.000) 550"
 *PSVersion: "(3010.000) 651"
 *PSVersion: "(3010.000) 652"
