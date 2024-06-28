@@ -25,7 +25,6 @@ modules:
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
       - akonadi-server-mysql
       - akonadi-server
-      - kmousetool
       - krfb-libs
       - krfb
       - mariadb-backup
