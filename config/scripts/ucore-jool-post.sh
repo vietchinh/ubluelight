@@ -6,4 +6,4 @@
 set -oue pipefail
 
 # Your code goes here.
-sudo dkms install jool/4.1.11 --force
+sudo dkms autoinstall jool/4.1.11 -k 6.8.11-300
