@@ -4,7 +4,7 @@ name: ucore-zfs-rpm-podman-light
 description: Ucore minimal with zfs and optional lxd and nfs container
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/ucore-minimal
+base-image: ghcr.io/ublue-os/fedora-coreos
 image-version: stable-zfs # latest is also supported if you want new updates ASAP
 
 # list of modules, executed in order
@@ -17,34 +17,40 @@ modules:
 
   - type: rpm-ostree
     install:
-    - htop
-    - cockpit-pcp
-    - cockpit-storaged
-    - duperemove
-    - xdg-dbus-proxy
-    - xdg-user-dirs
-    - smartmontools
-    - powertop
-    - lm_sensors
-    - hdparm
-    - hddtemp
-    - hddfancontrol
-    - pcp-zeroconf
-    - pciutils
-    - usbutils
-    - cockpit-machines
-    - libvirt-client
-    - libvirt-daemon-kvm
-    - virt-install
+      # From https://github.com/ublue-os/ucore/blob/main/ucore/packages.json
+      - bootc
+      - cockpit-networkmanager
+      - cockpit-podman
+      - cockpit-selinux
+      - cockpit-system
+      - firewalld
+      - podman
+      - qemu-guest-agent
+      - cockpit-pcp
+      - cockpit-storaged
+      - distrobox
+      - duperemove
+      - pciutils
+      - pcp-zeroconf
+      - usbutils
+      - xdg-dbus-proxy
+      - xdg-user-dirs
+      - cockpit-machines
+      - libvirt-client
+      - libvirt-daemon-kvm
+      - virt-install
+      # End
+      - htop
+      - smartmontools
+      - powertop
+      - lm_sensors
+      - hdparm
+      - hddtemp
+      - hddfancontrol
+      - kernel-tools
     remove:
-    - moby-engine
-    - toolbox
-    - podman-compose
-    - pv
-    - tailscale
-    - tmux
-    - open-vm-tools
-    - wireguard-tools
+      - moby-engine
+      - toolbox
 
   - type: script
     scripts:
