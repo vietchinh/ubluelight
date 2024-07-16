@@ -33,3 +33,5 @@ WantedBy=timers.target
 EOF
 
 echo "compression-algorithm = zstd" >> /usr/lib/systemd/zram-generator.conf
+
+wget https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ublue-os/ucore/tree/main/ucore/usr -P /usr
