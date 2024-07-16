@@ -59,8 +59,10 @@ modules:
   - type: systemd
     system:
       enabled:
+        - ucore-paths-provision.service
         - rpm-ostreed-upgrade-reboot.timer
       disabled:
+        - zincati.service
         - rpm-ostreed-automatic.timer
       masked:
         - lxd.service
