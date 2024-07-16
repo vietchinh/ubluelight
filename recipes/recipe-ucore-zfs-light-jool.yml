@@ -63,6 +63,7 @@ modules:
   - type: script
     scripts:
       - ucore.sh
+      - ucore-jool-post.sh
 
   - type: systemd
     system:
