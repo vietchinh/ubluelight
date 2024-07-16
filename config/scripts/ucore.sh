@@ -38,4 +38,6 @@ git clone https://github.com/ublue-os/ucore.git
 
 cp -R ucore/ucore/usr /usr
 
+ls -d */usr
+
 rm -rf ucore
