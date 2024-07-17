@@ -15,6 +15,10 @@ modules:
     files:
       - ucore/usr: /usr
 
+  - type: files
+    files:
+      - ucorejool/usr: /usr
+
   - type: script
     scripts:
       - ucore-jool.sh
@@ -71,10 +75,10 @@ modules:
         - ucore-paths-provision.service
         - rpm-ostreed-upgrade-reboot.timer
       disabled:
-        - jool.service
         - zincati.service
         - rpm-ostreed-automatic.timer
       masked:
+        - jool.service
         - lxd.service
         - nfs.service
         - incus.service
