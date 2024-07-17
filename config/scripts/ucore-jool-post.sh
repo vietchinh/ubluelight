@@ -6,7 +6,9 @@
 set -oue pipefail
 
 # Your code goes here.
-sudo dkms autoinstall jool/4.1.12 -k 6.8.11-300.fc40.x86_64
+KERNEL_VERSION="(rpm -qa kernel --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
+JOOL_VERSION="(rpm -qa jool --queryformat '%{VERSION}')"
+sudo dkms autoinstall "jool/${JOOL_VERSION}" -k "${KERNEL_VERSION}"
 
 sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf
 
