@@ -6,7 +6,7 @@
 set -oue pipefail
 
 # Your code goes here.
-sudo dkms autoinstall jool/4.1.11 -k 6.8.11-300.fc40.x86_64
+sudo dkms autoinstall jool/4.1.12 -k 6.8.11-300.fc40.x86_64
 
 sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf
 
