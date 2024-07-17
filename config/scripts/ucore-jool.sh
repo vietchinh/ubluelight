@@ -13,3 +13,5 @@ git clone https://github.com/ublue-os/ucore.git
 cp -a --verbose ucore/ucore/usr /
 
 rm -rf ucore
+
+sed -i '/^PRETTY_NAME/s/"$/ (uCore minimal)"/' /usr/lib/os-release
