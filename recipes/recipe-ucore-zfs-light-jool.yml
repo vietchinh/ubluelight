@@ -71,6 +71,7 @@ modules:
         - ucore-paths-provision.service
         - rpm-ostreed-upgrade-reboot.timer
       disabled:
+        - jool.service
         - zincati.service
         - rpm-ostreed-automatic.timer
       masked:
