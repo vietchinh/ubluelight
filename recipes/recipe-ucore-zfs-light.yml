@@ -10,10 +10,10 @@ image-version: stable-zfs # latest is also supported if you want new updates ASA
 # list of modules, executed in order
 # you can include multiple instances of the same module
 modules:
-
   - type: files
     files:
-      - ucore/usr: /usr
+      - source: ucore
+        destination: /
 
   - type: rpm-ostree
     install:
