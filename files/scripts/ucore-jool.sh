@@ -10,7 +10,7 @@ set -oue pipefail
 
 git clone https://github.com/ublue-os/ucore.git
 
-cp -a --verbose ucore/ucore/usr /
+cp -a --verbose ucore/ucore/system_files /
 
 rm -rf ucore
 
