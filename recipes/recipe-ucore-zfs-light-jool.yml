@@ -47,10 +47,10 @@ modules:
       - usbutils
       - xdg-dbus-proxy
       - xdg-user-dirs
-      - cockpit-machines
-      - libvirt-client
-      - libvirt-daemon-kvm
-      - virt-install
+#      - cockpit-machines
+#      - libvirt-client
+#      - libvirt-daemon-kvm
+#      - virt-install
       # End
       - jool
       - htop

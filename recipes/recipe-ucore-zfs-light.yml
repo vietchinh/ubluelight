@@ -32,10 +32,10 @@ modules:
       - pcp-zeroconf
       - pciutils
       - usbutils
-      - cockpit-machines
-      - libvirt-client
-      - libvirt-daemon-kvm
-      - virt-install
+#      - cockpit-machines
+#      - libvirt-client
+#      - libvirt-daemon-kvm
+#      - virt-install
     remove:
       - moby-engine
       - toolbox
