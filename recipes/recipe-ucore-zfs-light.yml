@@ -41,7 +41,7 @@ modules:
       - toolbox
       - podman-compose
       - pv
-      - tailscale
+      #- tailscale
       - tmux
       - open-vm-tools
       - wireguard-tools
