@@ -37,7 +37,6 @@ modules:
       - libvirt-daemon-kvm
       - virt-install
     remove:
-      - nfs-utils
       - moby-engine
       - toolbox
       - podman-compose
