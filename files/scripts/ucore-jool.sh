@@ -10,8 +10,8 @@ sudo rpm-ostree override replace https://kojipkgs.fedoraproject.org/packages/gcc
 
 git clone https://github.com/ublue-os/ucore.git
 
-cp -a --verbose ucore/ucore/system_files/usr /usr
-cp -a --verbose ucore/ucore/system_files/etc /etc
+cp -a --verbose ucore/ucore/system_files/usr /
+cp -a --verbose ucore/ucore/system_files/etc /
 
 rm -rf ucore
 
