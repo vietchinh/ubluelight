@@ -6,7 +6,11 @@
 set -oue pipefail
 
 # Your code goes here.
-sudo rpm-ostree override replace https://kojipkgs.fedoraproject.org/packages/gcc/14.2.1/3.fc40/x86_64/libgcc-14.2.1-3.fc40.x86_64.rpm
+GCC_VERSION="$(curl -sS "https://kojipkgs.fedoraproject.org/packages/gcc/" | grep -Poh -- '\d+.\d+.\d+\/' | sort -n | tail -1 | tr -d '\/' | tr -d '\n' | tr -d '\0')"
+SUFFIX="$(curl -sS "https://kojipkgs.fedoraproject.org/packages/gcc/$GCC_VERSION/" | grep -Poh -- '\d.fc40' | tail -1 | tr -d '\n' | tr -d '\0')"
+URL="https://kojipkgs.fedoraproject.org/packages/gcc/$GCC_VERSION/$SUFFIX/x86_64/libgcc-$GCC_VERSION-$SUFFIX.x86_64.rpm"
+echo "$URL"
+sudo rpm-ostree override replace "$URL"
 
 git clone https://github.com/ublue-os/ucore.git
 
