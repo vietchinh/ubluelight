@@ -26,18 +26,16 @@ modules:
       - akonadi-server
       - krfb-libs
       - krfb
-#      - mariadb-backup
-#      - mariadb-cracklib-password-check
-#      - mariadb-common
-#      - mariadb-server-utils
-#      - mariadb-server
-#      - mariadb-errmsg
-#      - mariadb-gssapi-server
-#      - mariadb
+      - mariadb-backup
+      - mariadb-cracklib-password-check
+      - mariadb-common
+      - mariadb-server
+      - mariadb-errmsg
+      - mariadb-gssapi-server
+      - mariadb
       - filelight
-#      - mariadb-connector-c
-#      - mariadb-connector-c-config
-#      - perl-DBD-MariaDB
+      - mariadb-connector-c
+      - mariadb-connector-c-config
       - qt6-qtbase-mysql
       - apr
       - apr-util
