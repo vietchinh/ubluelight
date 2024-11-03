@@ -29,7 +29,7 @@ modules:
       - mariadb-backup
       - mariadb-cracklib-password-check
       - mariadb-common
-#      - mariadb-server-utils
+      - mariadb-server-utils-3
       - mariadb-server
       - mariadb-errmsg
       - mariadb-gssapi-server
