@@ -38,7 +38,7 @@ modules:
       - firewalld
       - podman
       - qemu-guest-agent
-      - cockpit-pcp
+      #- cockpit-pcp
       - cockpit-storaged
       - distrobox
       - duperemove
