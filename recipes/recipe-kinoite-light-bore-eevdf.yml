@@ -25,6 +25,7 @@ modules:
       - libcap-ng-devel
       - procps-ng-devel
       - uksmd
+      - scx-scheds
     remove:
       - kernel
       - kernel-core
