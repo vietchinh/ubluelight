@@ -47,7 +47,7 @@ modules:
       - wireguard-tools
       - fzf
       - icoutils
-      - kcron
+      #- kcron
 
   - type: default-flatpaks
     notify: true   # Send notification after install/uninstall is finished (true/false)
