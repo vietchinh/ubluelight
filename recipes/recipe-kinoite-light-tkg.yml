@@ -19,7 +19,7 @@ modules:
     install:
       # - micro
       # - starship
-      - kernel-6.12.10-100_tkg.fc41
+      - kernel-6.12.10-200_tkg.fc41
     remove:
       - kernel
       - kernel-core
