@@ -20,6 +20,10 @@ modules:
       # - micro
       # - starship
       - kernel-6.12.10-200_tkg.fc41
+      - kernel-core-6.12.10-200_tkg.fc41
+      - kernel-modules-6.12.10-200_tkg.fc41
+      - kernel-modules-core-6.12.10-200_tkg.fc41
+      - kernel-modules-extra-6.12.10-200_tkg.fc41
     remove:
       - kernel
       - kernel-core
