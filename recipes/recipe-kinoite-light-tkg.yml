@@ -1,0 +1,30 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: ublue-kinoite-tkg
+# description will be included in the image's metadata
+description: Ublue kinoite minimal with tkg kernel
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/kinoite-main
+image-version: 41 # latest is also supported if you want new updates ASAP
+
+# list of modules, executed in order
+# you can include multiple instances of the same module
+modules:
+  - type: rpm-ostree
+    repos:
+      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/whitehara/kernel-tkg/repo/fedora-%OS_VERSION%/whitehara-kernel-tkg-fedora-%OS_VERSION%.repo
+    install:
+      # - micro
+      # - starship
+      - kernel-6.12.10-100_tkg.fc41
+    remove:
+      - kernel
+      - kernel-core
+      - kernel-modules
+      - kernel-modules-core
+      - kernel-modules-extra
+
+  - from-file: kinoite-modules.yml
