@@ -32,7 +32,7 @@ jobs:
           #- recipe-kinoite-light-tkg.yml
           - recipe-kinoite-light-bore-eevdf.yml
           - recipe-kinoite-light-bore-eevdf-beta.yml
-          - recipe-kinoite-light-bore-eevdf-lto.yml
+          #- recipe-kinoite-light-bore-eevdf-lto.yml
 
     steps:
       # the build is fully handled by the reusable github action
